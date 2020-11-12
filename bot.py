@@ -6,11 +6,13 @@ import pandas as pd
 from config import USERNAME, PASSWORD, HASHTAGS
 from extensions import InstaBot
 
-browser = wd.Firefox()
+#browser = wd.Firefox()
 
-homepage = InstaBot(browser)
-homepage.login(USERNAME, PASSWORD)
-homepage.follow_by_hashtag(HASHTAGS)
+homepage = InstaBot(USERNAME, PASSWORD)
+homepage.login()
+
+
+#homepage.follow_by_hashtag(HASHTAGS)
 
 
 
