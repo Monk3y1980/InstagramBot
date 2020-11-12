@@ -28,9 +28,14 @@ class InstaBot:
     def follow_by_hashtag(self, hashtags):
 
         for tag in hashtags:
-            element = self.browser.get('https://www.instagram.com/explore/tags/' + tag + '/')
-            element.location_once_scrolled_into_view
-            self.browser.find_element_by_tag_name('a').click()
+            self.browser.get('https://www.instagram.com/explore/tags/' + tag + '/')
+            element = self.browser.find_element_by_tag_name('a')
+            action = ActionChains(self.browser)
+            for elem in element:
+                action.move_to_element(elem)
+                action.perform()
+                action.click()
+
 
 
 
